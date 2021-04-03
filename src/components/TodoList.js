@@ -48,7 +48,7 @@ const TodoList = ({ tasksList, setTasksList }) => {
   const renderTodoCheckbox = (task, i) => {
     return (
       <div
-        className="cursor-pointer w-14 h-12 flex justify-center border-2 border-gray-300 
+        className="self-center cursor-pointer w-14 h-12 flex justify-center border-2 border-gray-300 
                   dark:border-gray-600 rounded-full m-5 bg-gradient-to-b 
                   from-blue-300 via-indigo-400 via-red-800 to-pink-400"
         onClick={() => {
@@ -87,7 +87,7 @@ const TodoList = ({ tasksList, setTasksList }) => {
           {task.completed && renderTodoCheckbox(task, i)}
           {!task.completed && (
             <div
-              className="cursor-pointer w-14 h-12 m-5 rounded-full dark:border-gray-600 
+              className="self-center cursor-pointer w-14 h-12 m-5 rounded-full dark:border-gray-600 
                     border-gray-200 border-2 bg-white dark:bg-gray-800"
               onClick={() => {
                 onCompleteTask(task, i);
@@ -96,7 +96,7 @@ const TodoList = ({ tasksList, setTasksList }) => {
           )}
           {/* Todo Task Name */}
           <span
-            className="h-20 w-full cursor-pointer"
+            className="h-auto w-full cursor-pointer break-all"
             onClick={() => onCompleteTask(task, i)}
           >
             <p
@@ -111,7 +111,7 @@ const TodoList = ({ tasksList, setTasksList }) => {
           </span>
           {/* Todo Task Remove Button */}
           <button
-            className="w-10 mr-2"
+            className="w-16 mr-2 sm:10"
             onClick={() => removeTask(tasksList, i + 1)}
           >
             <svg
